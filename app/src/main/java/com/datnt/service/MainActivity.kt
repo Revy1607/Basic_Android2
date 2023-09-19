@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
     private var btnStopMusic: Button? = null
     private var btnboundService: Button? = null
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

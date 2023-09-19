@@ -18,6 +18,7 @@ class ForegroundServiceSong : Service() {
     companion object{
         const val ACTION_STOP = "com.yourpackage.ACTION_STOP"
     }
+
     private val binder = LocalBinder()
     private var mediaPlayer: MediaPlayer? = null
     private val channelId = "music_channel"
@@ -49,7 +50,7 @@ class ForegroundServiceSong : Service() {
 
         val stopIntent = Intent(this, ForegroundServiceSong::class.java)
         stopIntent.action = ACTION_STOP
-        val pendingStopIntent = PendingIntent.getService(this, 0, stopIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            val pendingStopIntent = PendingIntent.getService(this, 0, stopIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
         // Tạo notification
         val notification = NotificationCompat.Builder(this, channelId)
